@@ -6,7 +6,7 @@
 
 int main()
 {
-	//ÑÝÊ¾¶à¸ö×Ö·û´ÓÁ½¶ËÒÆ¶¯£¬ÏòÖÐ¼ä»ã¾Û
+	//æ¼”ç¤ºå¤šä¸ªå­—ç¬¦ä»Žä¸¤ç«¯ç§»åŠ¨ï¼Œå‘ä¸­é—´æ±‡èš
 	 char arr1[] = "welcome to bit!!!";
 	 char arr2[] = "#################";
 	 int left = 0;
@@ -16,16 +16,16 @@ int main()
 		 arr2[left] = arr1[left];
 		 arr2[right] = arr1[right];
 		 printf("%s\n",arr2);
-		 //ÐÝÏ¢Ò»Ãë
+		 //ä¼‘æ¯ä¸€ç§’
 		 Sleep(1000);
-		 system("cls");// Ö´ÐÐÏµÍ³µÄÒ»¸öÃüÁîº¯Êýcls -- Çå¿Õ
+		 system("cls");// æ‰§è¡Œç³»ç»Ÿçš„ä¸€ä¸ªå‘½ä»¤å‡½æ•°cls -- æ¸…ç©º
 		 left++;
 		 right--;
 		
 	 }
 	 if(left > right)
 	 {
-		 printf("%s\n",arr2);
+		 printf("%s\n",arr2);;
 	 }
 	return 0;
 }
