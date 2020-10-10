@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//求十个数的最大值
+//脟贸脢庐赂枚脢媒碌脛脳卯麓贸脰碌
 
 int main()
 {
@@ -16,7 +16,7 @@ int main()
 			max=arr[i];
 		}
 	}
-	printf("%d\n",max);
+	printf("%d\n",max);;
 }
 
 
