@@ -1,20 +1,20 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-//´òÓ¡9*9³Ë·¨¿Ú¾÷±í
+//æ‰“å°9*9ä¹˜æ³•å£è¯€è¡¨
 
 int main()
 {
 	int i = 0;
 	int j = 0;
-	//´òÓ¡9ĞĞ
+	//æ‰“å°9è¡Œ
 	for(i=1; i<=9; i++)
 	{
-		//´òÓ¡ÁĞ
+		//æ‰“å°åˆ—
 		for(j=1; j<=i; j++)
 		{
 			printf("%d*%d=%-2d ",i,j,i*j);
 		}
-		printf("\n");
+		printf("\n");;
 	}
 	return 0;
 }
