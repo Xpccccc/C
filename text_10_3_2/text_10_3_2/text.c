@@ -2,18 +2,18 @@
 
 #include <stdio.h>
 //#include <string.h>
-//ÕÛ°ë²éÕÒËã·¨
-//ÔÚÊı×éÖĞ²éÕÒÒ»¸öÊı
+//æŠ˜åŠæŸ¥æ‰¾ç®—æ³•
+//åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªæ•°
 
 int main()
 {
 	int arr[] = {1,2,3,4,5,6,7,8,9,10};
 	int k = 7;
-	int sz = sizeof(arr)/sizeof(arr[0])-1;//¼ÆËãÔªËØ¸öÊı
-	int left = 0;    //×óÏÂ±ê
-	int right = sz;  //ÓÒÏÂ±ê
+	int sz = sizeof(arr)/sizeof(arr[0])-1;//è®¡ç®—å…ƒç´ ä¸ªæ•°
+	int left = 0;    //å·¦ä¸‹æ ‡
+	int right = sz;  //å³ä¸‹æ ‡
 
-	while (left <= right)  //×óÏÂ±ê´óÓÚÓÒÏÂ±êÌø³öwhileÑ­»·
+	while (left <= right)  //å·¦ä¸‹æ ‡å¤§äºå³ä¸‹æ ‡è·³å‡ºwhileå¾ªç¯
 	{
 		int mid =(left+right)/2;
 		if(arr[mid] > k)
@@ -26,13 +26,13 @@ int main()
 		}
 		else
 		{
-			printf("ÕÒµ½ÁË£¬ÏÂ±êÎª%d\n",mid);
+			printf("æ‰¾åˆ°äº†ï¼Œä¸‹æ ‡ä¸º%d\n",mid);
 			break;
 		}
 	}
 	if(left > right)
 	{
-		printf("ÕÒ²»µ½\n");
+		printf("æ‰¾ä¸åˆ°\n");;
 	}
 
 	return 0;
