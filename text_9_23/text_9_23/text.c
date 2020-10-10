@@ -5,11 +5,11 @@
 int main()
 {
 	int a = 0;
-	printf("请输入一个数: ");
+	printf("脟毛脢盲脠毛脪禄赂枚脢媒: ");
 	scanf("%d",&a);
 	if( 1 == a%2 )
 	{
-		printf("%d是奇数！\n",a);
+		printf("%d脢脟脝忙脢媒拢隆\n",a);;
 	}
 	return 0;
 }
