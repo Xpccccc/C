@@ -1,16 +1,16 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-//Êä³ö1¡ª100Ö®¼äµÄÆæÊý
+//è¾“å‡º1â€”100ä¹‹é—´çš„å¥‡æ•°
 #include <stdio.h>
 int main()
 {
-	//ÅÐ¶ÏÆæÊý
+	//åˆ¤æ–­å¥‡æ•°
 	int num = 1;
 	while(num<=100)
 	{
 		if( 0 != num%2)
-			printf("%dÊÇÆæÊý\n",num);
-		num++;
+			printf("%dæ˜¯å¥‡æ•°\n",num);
+		num++;;
 	
 	}
 
