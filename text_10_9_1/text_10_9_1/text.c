@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <math.h>
 #include <stdio.h>
-//ÊÇËØÊı·µ»Ø1£»²»ÊÇËØÊı·µ»Ø0
+//æ˜¯ç´ æ•°è¿”å›1ï¼›ä¸æ˜¯ç´ æ•°è¿”å›0
 int is_prime( int n)
 {
 	int j = 0;
@@ -17,14 +17,14 @@ int is_prime( int n)
 }
 int main()
 {
-	//ÅĞ¶Ï100-200Ö®¼äµÄËØÊı
+	//åˆ¤æ–­100-200ä¹‹é—´çš„ç´ æ•°
 	int i = 0;
 	for(i=100; i<=200; i++)
 	{
-		//ÅĞ¶ÏiÊÇ·ñÎªËØÊı
+		//åˆ¤æ–­iæ˜¯å¦ä¸ºç´ æ•°
 		if( 1 == is_prime(i) )
 		{
-			printf("%d ",i);
+			printf("%d ",i);;
 		}
 	}
 	return 0 ;

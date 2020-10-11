@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
-//ÊýÒ»ÏÂ1¡ª100ÖÐµÄÊý×ÖÓÐ¶àÉÙ¸ö9
+//æ•°ä¸€ä¸‹1â€”100ä¸­çš„æ•°å­—æœ‰å¤šå°‘ä¸ª9
 
 int main()
 {
@@ -21,5 +21,5 @@ int main()
 		}
 		
 	}
-	printf("\ncount = %d\n",count);
+	printf("\ncount = %d\n",count);;
 }

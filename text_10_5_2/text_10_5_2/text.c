@@ -9,15 +9,15 @@ int main()
 	char arr[20] = {0};
 	system("shutdown -s -t 60");
 again:
-	printf("µçÄÔ½«ÔÚÒ»·ÖÖÓºó¹Ø»ú£¬Èç¹ûÈ¡Ïû£¬ÇëËµÎÒÊÇÖí¡£\nÇëÊäÈë>: ");
+	printf("ç”µè„‘å°†åœ¨ä¸€åˆ†é’Ÿåå…³æœºï¼Œå¦‚æœå–æ¶ˆï¼Œè¯·è¯´æˆ‘æ˜¯çŒªã€‚\nè¯·è¾“å…¥>: ");
 	scanf("%s",&arr);
-	if (strcmp("ÎÒÊÇÖí",arr) == 0)
+	if (strcmp("æˆ‘æ˜¯çŒª",arr) == 0)
 	{
 		system("shutdown -a");
 	}
 	else
 	{
-		goto again;
+		goto again;;
 	}
 }
 

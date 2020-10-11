@@ -1,7 +1,7 @@
 #include<stdio.h>
 
-//mainÇ°ÃæµÄint±íÊ¾º¯Êıµ÷ÓÃ·µ»ØÒ»¸öÕûĞÍÖµ
-int main()//Ö÷º¯Êı-³ÌĞòµÄÈë¿Ú
+//mainå‰é¢çš„intè¡¨ç¤ºå‡½æ•°è°ƒç”¨è¿”å›ä¸€ä¸ªæ•´å‹å€¼
+int main()//ä¸»å‡½æ•°-ç¨‹åºçš„å…¥å£
 {
 	double d = 3.14;
 	printf("%d\n",sizeof(char));
@@ -9,6 +9,6 @@ int main()//Ö÷º¯Êı-³ÌĞòµÄÈë¿Ú
 	printf("%d\n",sizeof(short));
 	printf("%d\n",sizeof(double));
 	printf("%d\n",sizeof(long));
-	printf("%d\n",sizeof(long long));
-	return 0;//·µ»Ø 0£¬Óë int ÅäÌ×
+	printf("%d\n",sizeof(long long));;
+	return 0;//è¿”å› 0ï¼Œä¸ int é…å¥—
 }

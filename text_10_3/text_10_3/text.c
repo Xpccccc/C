@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//����n�Ľ׳�
+//¼ÆËãnµÄ½×³Ë
 
 int main()
 {
@@ -16,10 +16,10 @@ int main()
 		{
 			ret *= i;
 		}
-		//n�Ľ׳�(ret = ret * n;)
+		//nµÄ½×³Ë(ret = ret * n;)
 		sum += ret;
 	}
 	
-	printf("%d\n",sum);
+	printf("%d\n",sum);;
 	return 0;
 }

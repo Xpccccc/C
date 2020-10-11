@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//求两个数的最大公约数
+//脟贸脕陆赂枚脢媒碌脛脳卯麓贸鹿芦脭录脢媒
 
 int main()
 {
@@ -12,7 +12,7 @@ int main()
 	while(r = a%b)
 	{
 		// r = a%b;
-		 a = b;
+		 a = b;;
 		 b = r;
 	}
 	printf ("%d\n",b);
