@@ -9,9 +9,9 @@ void game()
 	InitBoard(board, ROW, COL);//数组初始化
 	DisplayBoard(board, ROW, COL);//打印棋盘
 	srand((unsigned int)time(NULL));//随机数
+	char ret = 0;
 	while (1)
 	{	
-		char ret = 0;
 		//玩家下棋
 		PlayerMove(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
@@ -33,18 +33,18 @@ void game()
 		{
 			break;
 		}
-		if (ret == '*')
-		{
-			printf("玩家赢\n");
-		}
-		else if (ret == '#')
-		{
-			printf("电脑赢\n");
-		}
-		else if (ret == 'Q')
-		{
-			printf("平局\n");
-		}
+	}
+	if (ret == '*')
+	{
+		printf("玩家赢\n");
+	}
+	else if (ret == '#')
+	{
+		printf("电脑赢\n");
+	}
+	else if (ret == 'Q')
+	{
+		printf("平局\n");
 	}
 }
 void text()

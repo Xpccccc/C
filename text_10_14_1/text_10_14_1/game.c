@@ -97,7 +97,7 @@ int IsFull(char board[ROW][COL], int row, int col)
 	{
 		for (j = 0; j < col; j++)
 		{
-			if (board[i][j] = ' ')
+			if (board[i][j] == ' ')/////////////先' '再board[i][j]
 			{
 				return 0;//没满
 			}
@@ -119,21 +119,21 @@ char IsWin(char board[ROW][COL], int row, int col)
 		}
 	}
 	//判断列
-	for (j = 0; i < col; j++)
+	for (j = 0; j < col; j++)
 	{
 		if (board[0][j] == board[1][j] && board[1][j] == board[2][j] && board[0][j] != ' ')
 		{
-			return board[j][1];
+			return board[1][j];
 		}
 	}
 	//判断对角线
 	if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[1][1] != ' ')
 	{
-		return board[0][0];
+		return board[1][1];
 	}
 	if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[1][1] != ' ')
 	{
-		return board[0][2];
+		return board[1][1];
 	}
 
 	/*for (i = 0; i < row; i++)
