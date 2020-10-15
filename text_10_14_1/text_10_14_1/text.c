@@ -4,8 +4,9 @@
 
 void game()
 {
-	//ÓÎÏ·µÄÊµÏÖ
+	//æ¸¸æˆçš„å®ç°
 	char board[ROW][COL] = { 0 };
+<<<<<<< HEAD
 	InitBoard(board, ROW, COL);//Êı×é³õÊ¼»¯
 	DisplayBoard(board, ROW, COL);//´òÓ¡ÆåÅÌ
 	srand((unsigned int)time(NULL));//Ëæ»úÊı
@@ -13,19 +14,28 @@ void game()
 	while (1)
 	{	
 		//Íæ¼ÒÏÂÆå
+=======
+	InitBoard(board, ROW, COL);//æ•°ç»„åˆå§‹åŒ–
+	DisplayBoard(board, ROW, COL);//æ‰“å°æ£‹ç›˜
+	srand((unsigned int)time(NULL));//éšæœºæ•°
+	char ret = 0;
+	while (1)
+	{	
+		//ç©å®¶ä¸‹æ£‹
+>>>>>>> 0d011a2b5346ae97b43e4b11ec76e6e4690645a9
 		PlayerMove(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
-		//ÅĞ¶ÏÊÇ·ñÓ®
-		//Íæ¼ÒÓ®  '*'
-		//µçÄÔÓ®  '#'
-		//Æ½¾Ö    'Q'
-		//¼ÌĞø    'C'
+		//åˆ¤æ–­æ˜¯å¦èµ¢
+		//ç©å®¶èµ¢  '*'
+		//ç”µè„‘èµ¢  '#'
+		//å¹³å±€    'Q'
+		//ç»§ç»­    'C'
 		ret = IsWin(board, ROW, COL);
 		if (ret != 'C')
 		{
 			break;
 		}
-		//µçÄÔÏÂÆå
+		//ç”µè„‘ä¸‹æ£‹
 		ComputerMove(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
 		ret = IsWin(board, ROW, COL);
@@ -35,6 +45,7 @@ void game()
 		}
 	}
 	if (ret == '*')
+<<<<<<< HEAD
 	{
 		printf("Íæ¼ÒÓ®\n");
 	}
@@ -46,6 +57,19 @@ void game()
 	{
 		printf("Æ½¾Ö\n");
 	}
+=======
+		{
+			printf("ç©å®¶èµ¢\n");
+		}
+		else if (ret == '#')
+		{
+			printf("ç”µè„‘èµ¢\n");
+		}
+		else if (ret == 'Q')
+		{
+			printf("å¹³å±€\n");
+		}
+>>>>>>> 0d011a2b5346ae97b43e4b11ec76e6e4690645a9
 }
 void text()
 {
@@ -55,18 +79,18 @@ void text()
 		printf("**************************\n");
 		printf("*****1.play   2.exit******\n");
 		printf("**************************\n");
-		printf("ÇëÑ¡Ôñ:>");
-		scanf("%d", &input);  //ÊäÈë1¿ªÊ¼£¬0ÍË³öÓÎÏ·£¬ÆäËûÖØĞÂÊäÈë
+		printf("è¯·é€‰æ‹©:>");
+		scanf("%d", &input);  //è¾“å…¥1å¼€å§‹ï¼Œ0é€€å‡ºæ¸¸æˆï¼Œå…¶ä»–é‡æ–°è¾“å…¥
 		switch (input)
 		{
 		case 1:
 			game();
 			break;
 		case 0:
-			printf("ÍË³öÓÎÏ·\n");
+			printf("é€€å‡ºæ¸¸æˆ\n");
 			break;
 		default:
-			printf("ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+			printf("è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 			break;
 		}
 	} while (input);
@@ -74,7 +98,7 @@ void text()
 
 int main()
 {
-	//Èı×ÓÆå
+	//ä¸‰å­æ£‹
 	text();
 	return 0;
 }
