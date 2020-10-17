@@ -2,17 +2,17 @@
 
 #include <stdio.h>
 
- void Hano(int n,char a,char b,char c)  //ÕâÀï´ú±ía½èÖúbÖùÒÆ¶¯µ½c
+ void Hano(int n,char a,char b,char c)  //è¿™é‡Œä»£è¡¨aå€ŸåŠ©bæŸ±ç§»åŠ¨åˆ°c
 {
-	 if (1 == n)
+	 if (1 == n)      //é€’å½’å‡ºå£
 	 {
-		 printf("%c --> %c\n", a, c);//Èç¹ûÖ»ÓĞÒ»¸ö£¬ÄÇÖ»ĞèÒªaÒÆ¶¯µ½c
+		 printf("%c --> %c\n", a, c);//å¦‚æœåªæœ‰ä¸€ä¸ªï¼Œé‚£åªéœ€è¦aç§»åŠ¨åˆ°c
 	 }
 	 else
 	 {
-		 Hano(n - 1, a, c, b);    // ÏÈ°ÑaÀïµÄµÚn-1¸ö½èÖúcÒÆ¶¯µ½b
-		 printf("%c --> %c\n", a, c);  //°ÑaÀïµÄ×îºóÒ»¸ö´ÓaÒÆ¶¯µ½c
-		 Hano(n - 1, b, a, c);   //ÔÙ°ÑbÀïµÄn-1¸ö½èÖúaÒÆ¶¯µ½c
+		 Hano(n - 1, a, c, b);    // å…ˆæŠŠaé‡Œçš„ç¬¬n-1ä¸ªå€ŸåŠ©cç§»åŠ¨åˆ°b
+		 printf("%c --> %c\n", a, c);  //æŠŠaé‡Œçš„æœ€åä¸€ä¸ªä»aç§»åŠ¨åˆ°c
+		 Hano(n - 1, b, a, c);   //å†æŠŠbé‡Œçš„n-1ä¸ªå€ŸåŠ©aç§»åŠ¨åˆ°c
 	 }
 
 }
@@ -20,13 +20,13 @@
  
 int main()
 {
-	//ººÅµËşÎÊÌâ
+	//æ±‰è¯ºå¡”é—®é¢˜
 	int n = 0;
 	int num = 0;
 	char a = 'A';
 	char b = 'B';
 	char c = 'C';
-	//ÊäÈënµÄÖµ
+	//è¾“å…¥nçš„å€¼
 	scanf("%d", &n);
 	Hano(n,a,b,c);
 	return 0;
