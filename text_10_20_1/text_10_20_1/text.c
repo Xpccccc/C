@@ -5,13 +5,13 @@
 int main()
 {
 	int arr[10] = { 0 };
-	printf("%p\n", arr);  //µØÖ· - Ê×ÔªËØµØÖ·
+	printf("%p\n", arr);  //è¯ç¡Š - å¿‘å•‹åŒ¼è¯ç¡Š
 	printf("%p\n", arr+1);
 
-	printf("%p\n", &arr[0]);  //Ê×ÔªËØµØÖ·
+	printf("%p\n", &arr[0]);  //å¿‘å•‹åŒ¼è¯ç¡Š
 	printf("%p\n", &arr[0]+1);
 
-	printf("%p\n", &arr);  //µØÖ· - Õû¸öÊı×éµÄµØÖ·
+	printf("%p\n", &arr);  //è¯ç¡Š - æ·•è·ºæ…éƒªè…”è¯ç¡Š
 	printf("%p\n", &arr+1);
-
+	return 0;
 }
