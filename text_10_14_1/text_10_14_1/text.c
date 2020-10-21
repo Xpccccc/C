@@ -4,17 +4,9 @@
 
 void game()
 {
-	//游戏的实现
+	//娓告垙鐨勫疄鐜�
 	char board[ROW][COL] = { 0 };
 <<<<<<< HEAD
-	InitBoard(board, ROW, COL);//�����ʼ��
-	DisplayBoard(board, ROW, COL);//��ӡ����
-	srand((unsigned int)time(NULL));//�����
-	char ret = 0;
-	while (1)
-	{	
-		//�������
-=======
 	InitBoard(board, ROW, COL);//数组初始化
 	DisplayBoard(board, ROW, COL);//打印棋盘
 	srand((unsigned int)time(NULL));//随机数
@@ -22,20 +14,28 @@ void game()
 	while (1)
 	{	
 		//玩家下棋
+=======
+	InitBoard(board, ROW, COL);//鏁扮粍鍒濆鍖�
+	DisplayBoard(board, ROW, COL);//鎵撳嵃妫嬬洏
+	srand((unsigned int)time(NULL));//闅忔満鏁�
+	char ret = 0;
+	while (1)
+	{	
+		//鐜╁涓嬫
 >>>>>>> 0d011a2b5346ae97b43e4b11ec76e6e4690645a9
 		PlayerMove(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
-		//判断是否赢
-		//玩家赢  '*'
-		//电脑赢  '#'
-		//平局    'Q'
-		//继续    'C'
-		ret = IsWin(board, ROW, COL);
+		//鍒ゆ柇鏄惁璧�
+		//鐜╁璧�  '*'
+		//鐢佃剳璧�  '#'
+		//骞冲眬    'Q'
+		//缁х画    'C'
+		ret = IsWin(board, ROW, COL);;
 		if (ret != 'C')
 		{
 			break;
 		}
-		//电脑下棋
+		//鐢佃剳涓嬫
 		ComputerMove(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
 		ret = IsWin(board, ROW, COL);
@@ -47,27 +47,27 @@ void game()
 	if (ret == '*')
 <<<<<<< HEAD
 	{
-		printf("���Ӯ\n");
+		printf("玩家赢\n");
 	}
 	else if (ret == '#')
 	{
-		printf("����Ӯ\n");
+		printf("电脑赢\n");
 	}
 	else if (ret == 'Q')
 	{
-		printf("ƽ��\n");
+		printf("平局\n");
 	}
 =======
 		{
-			printf("玩家赢\n");
+			printf("鐜╁璧n");
 		}
 		else if (ret == '#')
 		{
-			printf("电脑赢\n");
+			printf("鐢佃剳璧n");
 		}
 		else if (ret == 'Q')
 		{
-			printf("平局\n");
+			printf("骞冲眬\n");
 		}
 >>>>>>> 0d011a2b5346ae97b43e4b11ec76e6e4690645a9
 }
@@ -79,18 +79,18 @@ void text()
 		printf("**************************\n");
 		printf("*****1.play   2.exit******\n");
 		printf("**************************\n");
-		printf("请选择:>");
-		scanf("%d", &input);  //输入1开始，0退出游戏，其他重新输入
+		printf("璇烽�夋嫨:>");
+		scanf("%d", &input);  //杈撳叆1寮�濮嬶紝0閫�鍑烘父鎴忥紝鍏朵粬閲嶆柊杈撳叆
 		switch (input)
 		{
 		case 1:
 			game();
 			break;
 		case 0:
-			printf("退出游戏\n");
+			printf("閫�鍑烘父鎴廫n");
 			break;
 		default:
-			printf("输入错误，请重新输入\n");
+			printf("杈撳叆閿欒锛岃閲嶆柊杈撳叆\n");
 			break;
 		}
 	} while (input);
@@ -98,7 +98,7 @@ void text()
 
 int main()
 {
-	//三子棋
+	//涓夊瓙妫�
 	text();
 	return 0;
 }

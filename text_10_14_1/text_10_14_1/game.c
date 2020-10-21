@@ -5,10 +5,10 @@
 void InitBoard(char board[ROW][COL], int row, int col)
 {
 	int i = 0;
-	//每一列
+	//æ¯ä¸€åˆ—
 	for (i = 0; i < row; i++)
 	{
-		//每一行
+		//æ¯ä¸€è¡Œ
 		int j = 0;
 		for (j = 0; j < col; j++)
 		{
@@ -21,10 +21,10 @@ void InitBoard(char board[ROW][COL], int row, int col)
 void DisplayBoard(char board[ROW][COL], int row, int col)
 {
 	int i = 0;
-	//每一列
+	//æ¯ä¸€åˆ—
 	for (i = 0; i < row; i++)
 	{
-		//每一行
+		//æ¯ä¸€è¡Œ
 		int j = 0;
 		for (j = 0; j < col; j++)
 		{
@@ -57,20 +57,20 @@ void DisplayBoard(char board[ROW][COL], int row, int col)
 
 void PlayerMove(char board[ROW][COL], int row, int col)
 {
-	//玩家输入下棋的坐标
+	//çŽ©å®¶è¾“å…¥ä¸‹æ£‹çš„åæ ‡
 	int x = 0;
 	int y = 0;
-	printf("玩家下棋:>");
+	printf("çŽ©å®¶ä¸‹æ£‹:>");
 	scanf("%d%d",&x,&y);
-	//输入超过范围坐标的重新输入
+	//è¾“å…¥è¶…è¿‡èŒƒå›´åæ ‡çš„é‡æ–°è¾“å…¥
 	if (x <= row && y <= col && x >= 1 && y >= 1)
 	{
-		//指定坐标内容改为 '*'
+		//æŒ‡å®šåæ ‡å†…å®¹æ”¹ä¸º '*'
 		board[x - 1][y - 1] = '*';
 	}
 	else
 	{
-		printf("坐标错误，请重新输入\n");
+		printf("åæ ‡é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 	}
 }
 
@@ -78,14 +78,14 @@ void ComputerMove(char board[ROW][COL], int row, int col)
 {
 	int x = 0;
 	int y = 0;
-	//电脑生成随机数
+	//ç”µè„‘ç”Ÿæˆéšæœºæ•°
 	x = rand() % row;//x --> 0~row-1
 	y = rand() % col;//y --> 0~col-1
-	printf("电脑下棋:>\n");
-	//判断当前格子是否有旗子
+	printf("ç”µè„‘ä¸‹æ£‹:>\n");
+	//åˆ¤æ–­å½“å‰æ ¼å­æ˜¯å¦æœ‰æ——å­
 	if (' ' == board[x][y])
 	{
-		//电脑下棋 '#'
+		//ç”µè„‘ä¸‹æ£‹ '#'
 		board[x][y] = '#';
 	}
 }
@@ -97,20 +97,20 @@ int IsFull(char board[ROW][COL], int row, int col)
 	{
 		for (j = 0; j < col; j++)
 		{
-			if (board[i][j] == ' ')/////////////��' '��board[i][j]
+			if (board[i][j] == ' ')/////////////ÏÈ' 'ÔÙboard[i][j]
 			{
-				return 0;//没满
+				return 0;//æ²¡æ»¡
 			}
 		}
 	}
-	return 1;//满了
+	return 1;;//æ»¡äº†
 }
 
 char IsWin(char board[ROW][COL], int row, int col)
 {
 	int i = 0;
 	int j = 0;
-	//判断行
+	//åˆ¤æ–­è¡Œ
 	for (i = 0; i < row; i++)
 	{
 		if (board[i][0] ==  board[i][1] && board[i][1] == board[i][2] && board[i][1] != ' ')
@@ -119,9 +119,9 @@ char IsWin(char board[ROW][COL], int row, int col)
 		}
 	}
 <<<<<<< HEAD
-	//�ж���
+	//ÅÐ¶ÏÁÐ
 =======
-	//判断列
+	//åˆ¤æ–­åˆ—
 >>>>>>> 0d011a2b5346ae97b43e4b11ec76e6e4690645a9
 	for (j = 0; j < col; j++)
 	{
@@ -130,7 +130,7 @@ char IsWin(char board[ROW][COL], int row, int col)
 			return board[1][j];
 		}
 	}
-	//判断对角线
+	//åˆ¤æ–­å¯¹è§’çº¿
 	if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[1][1] != ' ')
 	{
 		return board[1][1];
