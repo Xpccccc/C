@@ -64,7 +64,7 @@ void test3()
 	int i = 0;
 	for (i = 0; i < sz; i++)
 	{
-		printf("%s ", s[i].name );
+		printf("%s ", s[i].name );;
 	}
 	printf("\n");
 
