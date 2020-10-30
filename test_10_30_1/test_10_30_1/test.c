@@ -2,9 +2,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
  //void qsort(void *base, size_t num, size_t width, int(__cdecl *compare)(const void *elem1, const void *elem2));
 
+//整数冒泡排序
 int cmp_int(const void* e1, const void* e2)
 {
 	return *(int*)e1 - *(int*)e2;
@@ -19,11 +20,14 @@ void test1()
 	{
 		printf("%d ", arr[i]);
 	}
+	printf("\n");
+
 }
 
+//浮点数冒泡排序
 int cmp_float(const void* e1, const void* e2)
 {
-	return (int)(*(float*)e1 - *(float*)e2); //ǿ������ת��
+	return (int)(*(float*)e1 - *(float*)e2); //强制类型转换
 }
 
 void test2()
@@ -36,10 +40,39 @@ void test2()
 	{
 		printf("%f ", farr[i]);
 	}
+	printf("\n");
+
+}
+
+
+struct Stu
+{
+	char name[10];
+	int age;
+};
+
+//结构体冒泡排序
+int cmp_stu_by_name(const void* e1, const void* e2)
+{
+	return strcmp(((struct Stu*)e1)->name, ((struct Stu*)e2)->name);
+}
+void test3()
+{
+	struct Stu s[3] = { { "zhangsan", 30 }, { "lisi", 10 }, { "wangwu", 20 } };
+	int sz = sizeof(s) / sizeof(s[0]);
+	qsort(s, sz, sizeof(s[0]), cmp_stu_by_name);
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		printf("%s ", s[i].name );
+	}
+	printf("\n");
+
 }
 int main()
 {
 	test1();
 	test2();
+	test3();
 	return 0;
 }
