@@ -4,23 +4,23 @@
 
 int Fib(int n)
 {
-	//µÝ¹é²»ÊÊºÏÇóì³²¨ÄÇÆõÊý£¬ÔËËãÁ¿Ì«´ó
+	//é€’å½’ä¸é€‚åˆæ±‚æ–æ³¢é‚£å¥‘æ•°ï¼Œè¿ç®—é‡å¤ªå¤§
 	/*if( n<=2 )
-		return 1;
+		return 1;;
 	else
 		return Fib(n-1)+Fib(n-2);*/
 
-	//ÓÃforÑ­»·Çó
+	//ç”¨forå¾ªçŽ¯æ±‚
 
 	int a = 1;
 	int b = 1;
-	int c = 1;//µ±n<=2Ê±£¬ì³²¨ÄÇÆõÊýÎªÒ»
+	int c = 1;//å½“n<=2æ—¶ï¼Œæ–æ³¢é‚£å¥‘æ•°ä¸ºä¸€
 	while( n>2 )
 	{
 		c = a+b;
 		a = b;
 		b = c;
-		n--;//ËãÍêÒ»´Î¼õÒ»£¨Ëã4ÐèÒªÔËËã2´Î£¬5ÐèÒª3´Î£©£¬×îºóÌø³öwhileÑ­»·
+		n--;//ç®—å®Œä¸€æ¬¡å‡ä¸€ï¼ˆç®—4éœ€è¦è¿ç®—2æ¬¡ï¼Œ5éœ€è¦3æ¬¡ï¼‰ï¼Œæœ€åŽè·³å‡ºwhileå¾ªçŽ¯
 	}
 	return c;
 
@@ -28,7 +28,7 @@ int Fib(int n)
 
 int main()
 {
-	//ÇóµÚn¸öì³²¨ÄÇÆõÊý
+	//æ±‚ç¬¬nä¸ªæ–æ³¢é‚£å¥‘æ•°
 	int n = 0;
 	int ret = 0;
 	scanf("%d",&n);
