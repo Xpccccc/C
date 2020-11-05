@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 
-//结构体
+//陆谩鹿鹿脤氓
 typedef struct Stu
 {
 	char name[20];
@@ -20,7 +20,7 @@ void Print(Stu* p)
 
 int main()
 {
-	Stu s = { "张三", 18, "保密" };
-	Print(&s);
+	Stu s = { "脮脜脠媒", 18, "卤拢脙脺" };
+	Print(&s);;
 	return 0;
 }
