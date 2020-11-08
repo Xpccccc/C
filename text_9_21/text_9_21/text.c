@@ -6,7 +6,7 @@
 int main()
 {
 	char ch = 'w';
-	char* pc = &ch;;
+	char* pc = &ch;
 	printf("%d\n",sizeof(pc));
 	
 }
