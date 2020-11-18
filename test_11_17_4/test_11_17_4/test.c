@@ -6,12 +6,12 @@ char* my_strcat(char* dest, const char* src)
 {
 	assert(dest != NULL);
 	assert(src != NULL);
-	char* ret = dest;//Ä¿±ê×Ö·û´®µØÖ·
-	//1.Ä¿µÄ×Ö·û´®ÏÈÕÒµ½'\0'
+	char* ret = dest;//ç›®æ ‡å­—ç¬¦ä¸²åœ°å€
+	//1.ç›®çš„å­—ç¬¦ä¸²å…ˆæ‰¾åˆ°'\0'
 	while (*dest != '\0')
 		dest++;
-	//2.×Ö·û´®¿½±´ -- ×·¼Ó
-	while (*dest++ = *src++)
+	//2.å­—ç¬¦ä¸²æ‹·è´ -- è¿½åŠ 
+	while (*dest++ = *src++) //å› ä¸ºæ‰¾åˆ°'\0'è¿‡åæ²¡æœ‰æŒ‡å‘ä¸‹ä¸€ä¸ªå…ƒç´ ï¼Œæ‰€ä»¥å…ˆ++ï¼Œæ‰¾åˆ°ä¸‹ä¸€ä¸ªå­—ç¬¦è¿½åŠ 
 	{
 		;
 	}
@@ -21,7 +21,7 @@ int main()
 {
 	char arr1[30] = "hello";
 	char arr2[] = "world";
-	//×Ö·û´®×·¼Óº¯Êı
+	//å­—ç¬¦ä¸²è¿½åŠ å‡½æ•°
 	my_strcat(arr1, arr2);
 	printf("%s\n", arr1);
 	return 0;
