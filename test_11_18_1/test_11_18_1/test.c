@@ -3,34 +3,44 @@
 #include <string.h>
 #include <assert.h>
 
-char* my_strncpy(char* dest, char* src, int num)
+char* my_strncpy(char* dest, const char* src, int num)
 {
 	assert(dest&&src);
 	char* ret = dest;
-	//ÏÈÇóÒª¸´ÖÆµÄ×Ö·û´®³¤¶È
-	int len = strlen(src);
-	//¸´ÖÆµÄ³¤¶È¼õ×Ö·û´®³¤¶È
-	int count = num - len;
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	//ÈôÒª¸´ÖÆµÄ³¤¶È´óÓÚÒª¸´ÖÆµÄ×Ö·û´®µÄ³¤¶È
-	while (count>0)
-	{
-		*src = '\0';
-		*dest++ = *src++;
-		count--;
-	}
+	//æˆ‘çš„ä»£ç   
+	
+	//å…ˆæ±‚è¦å¤åˆ¶çš„å­—ç¬¦ä¸²é•¿åº¦
+	//int len = strlen(src);
+	////å¤åˆ¶çš„é•¿åº¦å‡å­—ç¬¦ä¸²é•¿åº¦
+	//int count = num - len;
+	//while (*src != '\0')
+	//{
+	//	*dest = *src;
+	//	dest++;
+	//	src++;
+	//}
+	////è‹¥è¦å¤åˆ¶çš„é•¿åº¦å¤§äºŽè¦å¤åˆ¶çš„å­—ç¬¦ä¸²çš„é•¿åº¦
+	//while (count>0)
+	//{
+	//	*src = '\0';
+	//	*dest++ = *src++;
+	//	count--;
+        //}
+	
+	//å®˜æ–¹
+        while (num && (*dest++ = *src++))    /* copy string */ // numå’Œ*srcå¿…å®šæœ‰ä¸€ä¸ªå…ˆä¸º0
+                num--;
+
+        if (num)                              /* pad out with zeroes */
+                while (--num)
+                        *dest++ = '\0';
 	return ret;
 }
 int main()
 {
 	char arr1[] = "hello";
 	char arr2[] = "bit";
-	//Ä£ÄâÊµÏÖmy_strncpy
+	//æ¨¡æ‹Ÿå®žçŽ°my_strncpy
 	char* ret = my_strncpy(arr1, arr2, 4);
 	printf("%s\n", ret);
 	return 0;
