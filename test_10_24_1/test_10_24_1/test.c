@@ -21,6 +21,6 @@ void Print(Stu* p)
 int main()
 {
 	Stu s = { "ÕÅÈý", 18, "±£ÃÜ" };
-	Print(&s);;
+	Print(&s);
 	return 0;
 }

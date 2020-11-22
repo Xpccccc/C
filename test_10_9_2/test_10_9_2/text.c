@@ -22,7 +22,7 @@
 		}
 		else
 		{
-			return mid;;
+			return mid;
 		}
 	}
 	return -1;
