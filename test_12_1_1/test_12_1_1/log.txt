@@ -1,0 +1,10 @@
+function:main   file:d:\start code\c\test_12_1_1\test_12_1_1\test.c   line:14   date:Dec  1 2020   time:15:47:54   i=0
+function:main   file:d:\start code\c\test_12_1_1\test_12_1_1\test.c   line:14   date:Dec  1 2020   time:15:47:54   i=1
+function:main   file:d:\start code\c\test_12_1_1\test_12_1_1\test.c   line:14   date:Dec  1 2020   time:15:47:54   i=2
+function:main   file:d:\start code\c\test_12_1_1\test_12_1_1\test.c   line:14   date:Dec  1 2020   time:15:47:54   i=3
+function:main   file:d:\start code\c\test_12_1_1\test_12_1_1\test.c   line:14   date:Dec  1 2020   time:15:47:54   i=4
+function:main   file:d:\start code\c\test_12_1_1\test_12_1_1\test.c   line:14   date:Dec  1 2020   time:15:47:54   i=5
+function:main   file:d:\start code\c\test_12_1_1\test_12_1_1\test.c   line:14   date:Dec  1 2020   time:15:47:54   i=6
+function:main   file:d:\start code\c\test_12_1_1\test_12_1_1\test.c   line:14   date:Dec  1 2020   time:15:47:54   i=7
+function:main   file:d:\start code\c\test_12_1_1\test_12_1_1\test.c   line:14   date:Dec  1 2020   time:15:47:54   i=8
+function:main   file:d:\start code\c\test_12_1_1\test_12_1_1\test.c   line:14   date:Dec  1 2020   time:15:47:54   i=9
