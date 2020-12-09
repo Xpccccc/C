@@ -10,7 +10,7 @@ void LeftHanded(char arr[], int k)
 	//字符串长度
 	int len = strlen(arr);
 
-	int i = 0;;
+	int i = 0;
 
 	while (k)
 	{
