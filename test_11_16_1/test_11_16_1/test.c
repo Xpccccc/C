@@ -7,10 +7,10 @@
 void LeftHanded(char arr[], int k)
 {
 	assert(arr != NULL);
-	//×Ö·û´®³¤¶È
+	//å­—ç¬¦ä¸²é•¿åº¦
 	int len = strlen(arr);
 
-	int i = 0;
+	int i = 0;;
 
 	while (k)
 	{
@@ -18,18 +18,18 @@ void LeftHanded(char arr[], int k)
 		{
 			while (k)
 			{
-				char tmp = arr[0];//±£´æÃ¿´Î×óĞıÊ±µÄµÚÒ»¸ö×Ö·û
+				char tmp = arr[0];//ä¿å­˜æ¯æ¬¡å·¦æ—‹æ—¶çš„ç¬¬ä¸€ä¸ªå­—ç¬¦
 				for (i = 0; i<len - 1; i++)
 				{
 					arr[i] = arr[i + 1];
 				}
-				arr[i] = tmp;//×îºóÒ»¸ö×Ö·ûÎªÃ»±äÖ®Ç°µÄ×Ö·û
+				arr[i] = tmp;//æœ€åä¸€ä¸ªå­—ç¬¦ä¸ºæ²¡å˜ä¹‹å‰çš„å­—ç¬¦
 				k--;
 			}
 		}
 		else
 		{
-			printf("×óĞıÔªËØ¸öÊıÓĞÎó,ÇëÖØĞÂÊäÈë:");
+			printf("å·¦æ—‹å…ƒç´ ä¸ªæ•°æœ‰è¯¯,è¯·é‡æ–°è¾“å…¥:");
 			scanf("%d", &k);
 		}
 	}
@@ -39,10 +39,10 @@ int main()
 {
 	char arr[20];
 	int k = 0;
-	printf("ÇëÊäÈëĞèÒª×óĞıµÄ×Ö·û:");
+	printf("è¯·è¾“å…¥éœ€è¦å·¦æ—‹çš„å­—ç¬¦:");
 	gets(arr);
-	//×óĞıº¯Êı
-	printf("ÇëÊäÈëĞèÒª×óĞı×Ö·û¸öÊı:");
+	//å·¦æ—‹å‡½æ•°
+	printf("è¯·è¾“å…¥éœ€è¦å·¦æ—‹å­—ç¬¦ä¸ªæ•°:");
 	scanf("%d", &k);
 	LeftHanded(arr, k);
 	printf("%s\n", arr);
