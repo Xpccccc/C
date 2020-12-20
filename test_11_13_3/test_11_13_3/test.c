@@ -4,15 +4,15 @@
 
 int main()
 {
-	//²éÕæĞ×
-	//A:²»ÊÇÎÒ
-	//B:ÊÇC
-	//C:ÊÇD
-	//D:CÔÚºúËµ
+	//æŸ¥çœŸå‡¶
+	//A:ä¸æ˜¯æˆ‘
+	//B:æ˜¯C
+	//C:æ˜¯D
+	//D:Cåœ¨èƒ¡è¯´ã€‚
 	int killer = 0;
 	for (killer = 'a'; killer <= 'd'; killer++)
 	{
-		if ((killer != 'a') + (killer == 'c') + (killer == 'd') + (killer != 'd') == 3) //ÓĞÈı¸öÎªÕæ
+		if ((killer != 'a') + (killer == 'c') + (killer == 'd') + (killer != 'd') == 3) //æœ‰ä¸‰ä¸ªä¸ºçœŸ
 		{
 			printf("killer = %c\n", killer);
 		}
