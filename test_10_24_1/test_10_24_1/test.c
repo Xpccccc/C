@@ -23,4 +23,5 @@ int main()
 	Stu s = { "ÕÅÈý", 18, "±£ÃÜ" };
 	Print(&s);
 	return 0;
+	
 }
