@@ -2,11 +2,10 @@
 
 #define LENGTH_ENGLISH 100
 #define LENGTH_CHINESE 100
-//×î³õÄ¬ÈÏ´Ê»ã±í×î¶àÎª3¸ö
+//æœ€åˆé»˜è®¤è¯æ±‡è¡¨æœ€å¤šä¸º3ä¸ª
 #define DEFAULT_SIZE 3
-//Ò»´Î×î¶àÌí¼Óµ¥´Ê¸öÊı
+//ä¸€æ¬¡æœ€å¤šæ·»åŠ å•è¯ä¸ªæ•°
 #define COUNT_MAX 5
-
 
 #include <stdio.h>
 #include <assert.h>
@@ -16,32 +15,32 @@
 #include <windows.h>
 #include <time.h>
 
-//Ê¹ÓÃÃ¶¾ÙÀàĞÍ
+//ä½¿ç”¨æšä¸¾ç±»å‹
 enum
 {
-	Exit,//ÍË³ö
-	Add,//Ìí¼Ó
-	Mod,//ĞŞ¸Ä
-	View,//²é¿´
-	Del,//É¾³ı
-	Search,//²éÕÒ
-	Study//Ñ§Ï°
+	Exit,//é€€å‡º
+	Add,//æ·»åŠ 
+	Mod,//ä¿®æ”¹
+	View,//æŸ¥çœ‹
+	Del,//åˆ é™¤
+	Search,//æŸ¥æ‰¾
+	Study//å­¦ä¹ 
 };
 
-//µ¥´Ê½á¹¹Ìå
+//å•è¯ç»“æ„ä½“
 typedef struct Words
 {
-	char english[LENGTH_ENGLISH];//Ó¢ÎÄ
-	char chinese[LENGTH_CHINESE];//ÖĞÎÄ
+	char english[LENGTH_ENGLISH];//è‹±æ–‡
+	char chinese[LENGTH_CHINESE];//ä¸­æ–‡
 
 }Words;
 
-//´Ê»ã±í
+//è¯æ±‡è¡¨
 typedef struct Vocabulary
 {
-	struct Words *data;//¶¯Ì¬¿ª±ÙÄÚ´æ´óĞ¡
-	int size;//µ¥´Ê¸öÊı
-	int capacity;//´Ê»ã±íÂúÈİÁ¿
+	struct Words *data;//åŠ¨æ€å¼€è¾Ÿå†…å­˜å¤§å°
+	int size;//å•è¯ä¸ªæ•°
+	int capacity;//è¯æ±‡è¡¨æ»¡å®¹é‡
 }Vocabulary;
 
 void menu()
@@ -55,7 +54,7 @@ void menu()
 }
 
 
-//ÉùÃ÷º¯Êı
+//å£°æ˜å‡½æ•°
 void InitWords(Words *ps);
 void LoadContact(Vocabulary *ps);
 void CheckCapacity(Vocabulary* ps);
@@ -69,119 +68,119 @@ void StudyVocabulary(const Vocabulary* ps);
 
 
 
-/*º¯ÊıÊµÏÖ*/
+/*å‡½æ•°å®ç°*/
 
-//Ñ§Ï°µ¥´Ê
+//å­¦ä¹ å•è¯
 void StudyVocabulary(const Vocabulary* ps)
 {
 	int numStudy;
 	int score = 0;
-	srand((unsigned)time(NULL));//ÓÃÊ±¼ä´Á²úÉúËæ»úÊı
-	printf("ÇëÊäÈëÒªÑ§Ï°µÄµ¥´ÊÊı£º");
+	srand((unsigned)time(NULL));//ç”¨æ—¶é—´æˆ³äº§ç”Ÿéšæœºæ•°
+	printf("è¯·è¾“å…¥è¦å­¦ä¹ çš„å•è¯æ•°ï¼š");
 	scanf("%d", &numStudy);
-	//Èç¹ûÒªÑ§Ï°µÄµ¥´ÊÊı´óÓÚ×Üµ¥´ÊÊı
+	//å¦‚æœè¦å­¦ä¹ çš„å•è¯æ•°å¤§äºæ€»å•è¯æ•°
 	while (numStudy > ps->size){
-		printf("¹²%d¸öµ¥´Ê£¬ÇëÖØĞÂÊäÈë£º", ps->size);
+		printf("å…±%dä¸ªå•è¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼š", ps->size);
 		scanf("%d", &numStudy);
 	}
 	int numChoose;
-	printf("ÇëÑ¡Ôñ²âÊÔ·½°¸£º\n1¡ª¡ª²âÊÔÓ¢Óï\n2¡ª¡ª²âÊÔººÓï\n");
+	printf("è¯·é€‰æ‹©æµ‹è¯•æ–¹æ¡ˆï¼š\n1â€”â€”æµ‹è¯•è‹±è¯­\n2â€”â€”æµ‹è¯•æ±‰è¯­\n");
 	scanf("%d", &numChoose);
 	if (numChoose == 1)
 	{
 		int i = 0;
 		while (i < numStudy){
-			int random = rand() % (numStudy + 1);//Ëæ»úÊı×÷ÎªÏÂ±ê
-			printf("Ó¢ÎÄÊÇ:%s\nÇëÊäÈëººÓï£º", ps->data[random].english);
+			int random = rand() % (numStudy + 1);//éšæœºæ•°ä½œä¸ºä¸‹æ ‡
+			printf("è‹±æ–‡æ˜¯:%s\nè¯·è¾“å…¥æ±‰è¯­ï¼š", ps->data[random].english);
 			char str[LENGTH_ENGLISH];
 			scanf("%s", str);
 			i++;
 			if (strcmp(ps->data[random].chinese, str) == 0){
-				printf("¹§Ï²Äú£¬´ğ¶ÔÁË£¡\n");
+				printf("æ­å–œæ‚¨ï¼Œç­”å¯¹äº†ï¼\n");
 				score += 100 / numStudy;
 			}
 			else
-				printf("ºÜÒÅº¶£¬´ğ´íÁË£¡ÕıÈ·´ğ°¸ÊÇ%s\n", ps->data[random].chinese);
+				printf("å¾ˆé—æ†¾ï¼Œç­”é”™äº†ï¼æ­£ç¡®ç­”æ¡ˆæ˜¯%s\n", ps->data[random].chinese);
 		}
 	}
 	else if (numChoose == 2)
 	{
 		int i = 0;
 		while (i < numStudy){
-			int random = rand() % (numStudy + 1);//Ëæ»úÊı×÷ÎªÏÂ±ê
-			printf("ººÓïÊÇ:%s\nÇëÊäÈëÓ¢Óï£º", ps->data[random].chinese);
+			int random = rand() % (numStudy + 1);//éšæœºæ•°ä½œä¸ºä¸‹æ ‡
+			printf("æ±‰è¯­æ˜¯:%s\nè¯·è¾“å…¥è‹±è¯­ï¼š", ps->data[random].chinese);
 			char str[LENGTH_CHINESE];
 			scanf("%s", str);
 			i++;
 			if (strcmp(ps->data[random].english, str) == 0){
-				printf("¹§Ï²Äú£¬´ğ¶ÔÁË£¡\n");
+				printf("æ­å–œæ‚¨ï¼Œç­”å¯¹äº†ï¼\n");
 				score += 100 / numStudy;
 			}
 			else
-				printf("ºÜÒÅº¶£¬´ğ´íÁË£¡ÕıÈ·´ğ°¸ÊÇ%s\n", ps->data[random].english);
+				printf("å¾ˆé—æ†¾ï¼Œç­”é”™äº†ï¼æ­£ç¡®ç­”æ¡ˆæ˜¯%s\n", ps->data[random].english);
 		}
 	}
 	if (score <= 100 && score >= 90)
-		printf("ÓÅĞã£¡Çë¼ÌĞø±£³Ö£¡\n");
+		printf("ä¼˜ç§€ï¼è¯·ç»§ç»­ä¿æŒï¼\n");
 	else if (score <= 75 && score<90)
-		printf("Á¼ºÃ£¡Çë¼ÌĞø¼ÓÓÍ£¡\n");
+		printf("è‰¯å¥½ï¼è¯·ç»§ç»­åŠ æ²¹ï¼\n");
 	else if (score <= 60 && score<75)
-		printf("¼°¸ñ£¡Òª¼ÓÓÍÁË£¡\n");
+		printf("åŠæ ¼ï¼è¦åŠ æ²¹äº†ï¼\n");
 	else if (score <= 0 && score<60)
-		printf("²»¼°¸ñ£¡ºÃºÃÅ¬Á¦£¡\n");
+		printf("ä¸åŠæ ¼ï¼å¥½å¥½åŠªåŠ›ï¼\n");
 	Sleep(2000);
 
 }
 
 
-//ÕÒµ¥´Ê
+//æ‰¾å•è¯
 static int FindByEnglish(const Vocabulary*ps, char english[LENGTH_ENGLISH])
 {
 	assert(ps != NULL);
 
 	int i = 0;
-	//²éÕÒ
+	//æŸ¥æ‰¾
 	for (i = 0; i < ps->size; i++)
 	{
-		if (strcmp(ps->data[i].english, english) == 0) //ÕÒµ½
+		if (strcmp(ps->data[i].english, english) == 0) //æ‰¾åˆ°
 		{
 			return i;
 		}
 	}
-	return -1;//Ã»ÕÒµ½
+	return -1;//æ²¡æ‰¾åˆ°
 }
 
-//²éµ¥´Ê×Óº¯Êı(·â×°)
+//æŸ¥å•è¯å­å‡½æ•°(å°è£…)
 void Find(char* words, const Vocabulary* ps)
 {
 	scanf("%s", words);
 	int pos = FindByEnglish(ps, words);
 	if (-1 == pos)
 	{
-		printf("Ã»ÕÒµ½¸Ãµ¥´Ê\n");
+		printf("æ²¡æ‰¾åˆ°è¯¥å•è¯\n");
 	}
 	else
 	{
-		//ÏÔÊ¾µ±Ç°ÕÒµ½µÄµ¥´ÊµÄĞÅÏ¢
-		printf("%-8s\t%-8s\n", "Ó¢ÎÄ", "ÖĞÎÄ");
+		//æ˜¾ç¤ºå½“å‰æ‰¾åˆ°çš„å•è¯çš„ä¿¡æ¯
+		printf("%-8s\t%-8s\n", "è‹±æ–‡", "ä¸­æ–‡");
 		printf("%-8s\t%-8s\n",
 			ps->data[pos].english,
 			ps->data[pos].chinese);
 	}
 }
 
-//²éµ¥´Ê
+//æŸ¥å•è¯
 void SearchVocabulary(const Vocabulary* ps)
 {
 	assert(ps != NULL);
 
-	//ÊäÈëµ¥´Ê
+	//è¾“å…¥å•è¯
 	char english[LENGTH_ENGLISH];
 	char chinese[LENGTH_CHINESE];
 	int input = 0;
 	do
 	{
-		printf("ÇëÊäÈëÒª²éÕÒµÄµ¥´Ê:>1.Ó¢ÎÄ 2.ÖĞÎÄ");
+		printf("è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„å•è¯:>1.è‹±æ–‡ 2.ä¸­æ–‡");
 		scanf("%d", &input);
 		switch (input)
 		{
@@ -192,79 +191,79 @@ void SearchVocabulary(const Vocabulary* ps)
 			Find(chinese, ps);
 				break;
 		default:
-			printf("ÊäÈë´íÎó,ÇëÖØĞÂÊäÈë\n");
+			printf("è¾“å…¥é”™è¯¯,è¯·é‡æ–°è¾“å…¥\n");
 		}
 	} while (input);
 	
 }
 
-//É¾³ıµ¥´Ê
+//åˆ é™¤å•è¯
 void DeleteVocabulary(Vocabulary* ps)
 {
 	assert(ps != NULL);
 
-	//ÊäÈëµ¥´Ê
+	//è¾“å…¥å•è¯
 	char english[LENGTH_ENGLISH];
-	printf("ÇëÊäÈëÒªÉ¾³ıµÄµ¥´Ê:>");
+	printf("è¯·è¾“å…¥è¦åˆ é™¤çš„å•è¯:>");
 	scanf("%s", english);
 	int pos = FindByEnglish(ps, english);
-	if (pos == -1) //    >=0ÊÇÏÂ±ê
+	if (pos == -1) //    >=0æ˜¯ä¸‹æ ‡
 	{
-		printf("Ã»ÕÒµ½¸Ãµ¥´Ê\n");
+		printf("æ²¡æ‰¾åˆ°è¯¥å•è¯\n");
 	}
 	else
 	{
-		printf("È·¶¨É¾³ıÂğ£¿1.ÊÇ ·Ç1£º·ñ\n");
+		printf("ç¡®å®šåˆ é™¤å—ï¼Ÿ1.æ˜¯ é1ï¼šå¦\n");
 		int input = 0;
 		scanf("%d", &input);
 		if (input == 1);
 		{
 			int j = 0;
-			//É¾³ı - ´ÓÏÂ±êÎªiµÄÔªËØÍùÇ°ÒÆÒ»Î»
+			//åˆ é™¤ - ä»ä¸‹æ ‡ä¸ºiçš„å…ƒç´ å¾€å‰ç§»ä¸€ä½
 			for (j = pos; j < ps->size - 1; j++)
 			{
 				ps->data[j] = ps->data[j + 1];
 			}
 			ps->size--;
-			printf("É¾³ı³É¹¦\n");
+			printf("åˆ é™¤æˆåŠŸ\n");
 		}
 	}
 }
 
-//ĞŞ¸Äµ¥´Ê
+//ä¿®æ”¹å•è¯
 void ModifyVocabulary(Vocabulary* ps)
 {
 	assert(ps != NULL);
 
 	char english[LENGTH_ENGLISH];
-	printf("ÇëÊäÈëÒªĞŞ¸ÄµÄµ¥´Ê:>");
+	printf("è¯·è¾“å…¥è¦ä¿®æ”¹çš„å•è¯:>");
 	scanf("%s", english);
 	int pos = FindByEnglish(ps, english);
 	if (-1 == pos)
 	{
-		printf("Ã»ÕÒµ½¸Ãµ¥´Ê\n");
+		printf("æ²¡æ‰¾åˆ°è¯¥å•è¯\n");
 	}
 	else
 	{
-		printf("ÇëÊäÈëÓ¢Óï:>");
+		printf("è¯·è¾“å…¥è‹±è¯­:>");
 		scanf("%s", ps->data[pos].english);
-		printf("ÇëÊäÈëººÓï:>");
+		printf("è¯·è¾“å…¥æ±‰è¯­:>");
 		scanf("%s", ps->data[pos].chinese);
-		printf("ĞŞ¸Ä³É¹¦\n");
+		printf("ä¿®æ”¹æˆåŠŸ\n");
 	}
 }
 
-//²é¿´´Ê»ã±í
+//æŸ¥çœ‹è¯æ±‡è¡¨
 void ViewVocabulary(const Vocabulary* ps)
 {
 	assert(ps != NULL);
-	//×ÖÄ¸ÅÅĞò
+	//å­—æ¯æ’åº
 	int i = 0;
 	for (i = 0; i < ps->size - 1; i++)
 	{
 		if (strcmp(ps->data[i].english, ps->data[i + 1].english) < 0)
 		{
-			//½»»»
+			//äº¤æ¢
 			Words tmp = ps->data[i];
 			ps->data[i] = ps->data[i + 1];
 			ps->data[i + 1] = tmp;
@@ -273,14 +272,14 @@ void ViewVocabulary(const Vocabulary* ps)
 
 	if (0 == ps->size)
 	{
-		printf("´Ê»ã±íÎª¿Õ\n");
+		printf("è¯æ±‡è¡¨ä¸ºç©º\n");
 	}
 	else
 	{
 		int i = 0;
-		//±êÌâ
-		printf("%-8s\t%-8s\n", "Ó¢ÎÄ", "ÖĞÎÄ");
-		//Êı¾İ
+		//æ ‡é¢˜
+		printf("%-8s\t%-8s\n", "è‹±æ–‡", "ä¸­æ–‡");
+		//æ•°æ®
 		for (i = 0; i < ps->size; i++)
 		{
 			printf("%-8s\t%-8s\n",
@@ -291,33 +290,33 @@ void ViewVocabulary(const Vocabulary* ps)
 	
 }
 
-//Ôö¼Óµ¥´Ê×Óº¯Êı(·â×°)
+//å¢åŠ å•è¯å­å‡½æ•°(å°è£…)
 void AddWords(Vocabulary *ps)
 {
-	//ÅĞ¶Ïµ±Ç°Í¨Ñ¶Â¼ÊÇ·ñÂúÈİÁ¿
+	//åˆ¤æ–­å½“å‰é€šè®¯å½•æ˜¯å¦æ»¡å®¹é‡
 	CheckCapacity(ps);
-	printf("ÇëÊäÈëÓ¢ÎÄ:>");
+	printf("è¯·è¾“å…¥è‹±æ–‡:>");
 	scanf("%s", ps->data[ps->size].english);
-	//Èç¹ûÊäÈëµÄµ¥´ÊÏàÍ¬
+	//å¦‚æœè¾“å…¥çš„å•è¯ç›¸åŒ
 	//...
-	printf("ÇëÊäÈëÖĞÎÄ:>");
+	printf("è¯·è¾“å…¥ä¸­æ–‡:>");
 	scanf("%s", ps->data[ps->size].chinese);
 	ps->size++;
-	printf("Ìí¼Ó³É¹¦\n");
+	printf("æ·»åŠ æˆåŠŸ\n");
 }
 
-//Ôö¼Óµ¥´Ê
+//å¢åŠ å•è¯
 void AddVocabulary(Vocabulary *ps)
 {
 	assert(ps != NULL);
 	int count = 0;
 	while (1)
 	{
-		//µ±Ìí¼Óµ½10¸öµ¥´ÊµÄÊ±ºòÑ¯ÎÊÊÇ·ñÒª¼ÌĞøÌí¼Ó
+		//å½“æ·»åŠ åˆ°10ä¸ªå•è¯çš„æ—¶å€™è¯¢é—®æ˜¯å¦è¦ç»§ç»­æ·»åŠ 
 		if (count == COUNT_MAX)
 		{
 			int add = 0;
-			printf("ÊÇ·ñ¼ÌĞøÌí¼Ó£¿1.ÊÇ ·Ç1.·ñ\n");
+			printf("æ˜¯å¦ç»§ç»­æ·»åŠ ï¼Ÿ1.æ˜¯ é1.å¦\n");
 			scanf("%d", &add);
 			if (add == 1)
 			{
@@ -334,7 +333,7 @@ void AddVocabulary(Vocabulary *ps)
 	}
 }
 
-//¶ÁÈ¡ÎÄ¼ş·Åµ½´Ê»ã±íÖĞ
+//è¯»å–æ–‡ä»¶æ”¾åˆ°è¯æ±‡è¡¨ä¸­
 void LoadVocabulary(Vocabulary *ps)
 {
 	Words tmp = { 0 };
@@ -344,7 +343,7 @@ void LoadVocabulary(Vocabulary *ps)
 		printf("LoadVocabulary::%s\n", strerror(errno));
 	}
 
-	//¶ÁÈ¡ÎÄ¼şµÄ´Ê»ã±íÁĞ±í
+	//è¯»å–æ–‡ä»¶çš„è¯æ±‡è¡¨åˆ—è¡¨
 	while (fread(&tmp, sizeof(Words), 1, pfRead))
 	{
 		CheckCapacity(ps);
@@ -355,24 +354,24 @@ void LoadVocabulary(Vocabulary *ps)
 	pfRead = NULL;
 }
 
-//³õÊ¼»¯´Ê»ã±í
+//åˆå§‹åŒ–è¯æ±‡è¡¨
 void InitVocabulary(Vocabulary *ps)
 {
-	assert(ps != NULL);//±ÜÃâ¿ÕÖ¸Õë
-	//¸ø´Ê»ã±í¶¯Ì¬·ÖÅäÄÚ´æ
+	assert(ps != NULL);//é¿å…ç©ºæŒ‡é’ˆ
+	//ç»™è¯æ±‡è¡¨åŠ¨æ€åˆ†é…å†…å­˜
 	ps->data = (Words*)malloc(DEFAULT_SIZE*sizeof(Words));
-	if (ps->data == NULL)//Î´·ÖÅäµÄÇé¿ö
+	if (ps->data == NULL)//æœªåˆ†é…çš„æƒ…å†µ
 	{
 		return;
 	}
-	ps->capacity = DEFAULT_SIZE;//×î³õÄ¬ÈÏÂú´Ê»ã±íµÄµ¥´Ê¸öÊıÎªDEFAULT_SZ¸ö
+	ps->capacity = DEFAULT_SIZE;//æœ€åˆé»˜è®¤æ»¡è¯æ±‡è¡¨çš„å•è¯ä¸ªæ•°ä¸ºDEFAULT_SZä¸ª
 	ps->size = 0;
 
-	//¼ÓÔØ´Ê»ã±í
+	//åŠ è½½è¯æ±‡è¡¨
 	LoadVocabulary(ps);
 }
 
-//±£´æ´Ê»ã±íµ½ÎÄ¼ş
+//ä¿å­˜è¯æ±‡è¡¨åˆ°æ–‡ä»¶
 void SaveVocabulary(Vocabulary* ps)
 {
 	FILE* pfWrite = fopen("vocabulary.dat", "wb");
@@ -381,7 +380,7 @@ void SaveVocabulary(Vocabulary* ps)
 		printf("SaveVocabulary::%s\n", strerror(errno));
 		return;
 	}
-	//Ğ´´Ê»ã±íµÄÊı¾İµ½ÎÄ¼şÖĞ
+	//å†™è¯æ±‡è¡¨çš„æ•°æ®åˆ°æ–‡ä»¶ä¸­
 	int i = 0;
 	for (i = 0; i < ps->size; i++)
 	{
@@ -392,19 +391,19 @@ void SaveVocabulary(Vocabulary* ps)
 	pfWrite = NULL;
 }
 
-//¼ì²é´Ê»ã±íÊÇ·ñÂúµ¥´Ê
+//æ£€æŸ¥è¯æ±‡è¡¨æ˜¯å¦æ»¡å•è¯
 void CheckCapacity(Vocabulary* ps)
 {
 	assert(ps);
 
 	if (ps->size == ps->capacity)
 	{
-		//ÔöÈİ
+		//å¢å®¹
 		Words* ptr = (Words*)realloc(ps->data, (ps->capacity + 2)*sizeof(Words));
 		if (ptr != NULL)
 		{
 			ps->data = ptr;
-			ps->capacity += 2;//ÔöÈİºó
+			ps->capacity += 2;//å¢å®¹å
 		}
 		
 	}
@@ -413,14 +412,14 @@ void CheckCapacity(Vocabulary* ps)
 void test()
 {
 	int input = 0;
-	//´´½¨´Ê»ã±í
+	//åˆ›å»ºè¯æ±‡è¡¨
 	Vocabulary voc;
-	//´Ê»ã±í³õÊ¼»¯
+	//è¯æ±‡è¡¨åˆå§‹åŒ–
 	InitVocabulary(&voc);
 	do
 	{
-		printf("ÇëÑ¡Ôñ:>");
-		scanf("%d", &input);//ÊäÈëÑ¡Ïî
+		printf("è¯·é€‰æ‹©:>");
+		scanf("%d", &input);//è¾“å…¥é€‰é¡¹
 		switch (input)
 		{
 		case Add:
@@ -442,18 +441,18 @@ void test()
 			StudyVocabulary(&voc);
 			break;
 		case Exit:
-			SaveVocabulary(&voc);//ÍË³öÊ±±£´æ´Ê»ã±í
-			printf("ÍË³ö\n");
-			Sleep(1000);//Ë¯ÃßÒ»Ãë
+			SaveVocabulary(&voc);//é€€å‡ºæ—¶ä¿å­˜è¯æ±‡è¡¨
+			printf("é€€å‡º\n");
+			Sleep(1000);//ç¡çœ ä¸€ç§’
 			break;
 		default:
-			printf("Ñ¡Ôñ´íÎó,ÇëÖØĞÂÊäÈë\n");
+			printf("é€‰æ‹©é”™è¯¯,è¯·é‡æ–°è¾“å…¥\n");
 		}
 	} while (input);
 }
 int main()
 {
-	menu();//²Ëµ¥
+	menu();//èœå•
 	test();
 	return 0;
 }
