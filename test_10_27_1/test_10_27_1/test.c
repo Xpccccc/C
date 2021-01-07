@@ -4,8 +4,9 @@
 
 void test(int arr[])
 {
-	int sz = sizeof(arr) / sizeof(arr[0]);  // arr是字符数组的首元素地址
+	int sz = sizeof(arr) / sizeof(arr[0]);  // arr鏄瓧绗︽暟缁勭殑棣栧厓绱犲湴鍧�
 	printf("%d\n", sz);
+	
 }
 int main()
 {
