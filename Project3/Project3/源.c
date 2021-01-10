@@ -68,7 +68,6 @@ void SearchVocabulary(const Vocabulary* ps);
 void StudyVocabulary(const Vocabulary* ps);
 
 
-
 /*函数实现*/
 
 //学习单词
