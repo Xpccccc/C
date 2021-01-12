@@ -54,7 +54,6 @@ void menu()
 }
 
 
-
 //声明函数
 void InitWords(Words *ps);
 void LoadContact(Vocabulary *ps);
