@@ -15,7 +15,6 @@
 #include <windows.h>
 #include <time.h>
 
-
 //使用枚举类型
 enum
 {
