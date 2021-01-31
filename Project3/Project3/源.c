@@ -27,6 +27,7 @@ enum
 	Study//学习
 };
 
+
 //单词结构体
 typedef struct Words
 {
