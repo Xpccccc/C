@@ -131,7 +131,6 @@ void StudyVocabulary(const Vocabulary* ps)
 }
 
 
-
 //找单词
 static int FindByEnglish(const Vocabulary*ps, char english[LENGTH_ENGLISH])
 {
