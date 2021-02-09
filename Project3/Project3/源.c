@@ -193,7 +193,6 @@ void SearchVocabulary(const Vocabulary* ps)
 	
 }
 
-
 //删除单词
 void DeleteVocabulary(Vocabulary* ps)
 {
