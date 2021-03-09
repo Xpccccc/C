@@ -447,6 +447,7 @@ void test()
 		}
 	} while (input);
 }
+
 int main()
 {
 	menu();//菜单
