@@ -8,6 +8,7 @@
 #define COUNT_MAX 5
 
 
+
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
@@ -353,108 +354,4 @@ void LoadVocabulary(Vocabulary *ps)
 	pfRead = NULL;
 }
 
-//初始化词汇表
-void InitVocabulary(Vocabulary *ps)
-{
-	assert(ps != NULL);//避免空指针
-	//给词汇表动态分配内存
-	ps->data = (Words*)malloc(DEFAULT_SIZE*sizeof(Words));
-	if (ps->data == NULL)//未分配的情况
-	{
-		return;
-	}
-	ps->capacity = DEFAULT_SIZE;//最初默认满词汇表的单词个数为DEFAULT_SZ个
-	ps->size = 0;
-
-	//加载词汇表
-	LoadVocabulary(ps);
-}
-
-//保存词汇表到文件
-void SaveVocabulary(Vocabulary* ps)
-{
-	FILE* pfWrite = fopen("vocabulary.dat", "wb");
-	if (pfWrite == NULL)
-	{
-		printf("SaveVocabulary::%s\n", strerror(errno));
-		return;
-	}
-	//写词汇表的数据到文件中
-	int i = 0;
-	for (i = 0; i < ps->size; i++)
-	{
-		fwrite(&(ps->data[i]), sizeof(Words), 1, pfWrite);
-	}
-
-	fclose(pfWrite);
-	pfWrite = NULL;
-}
-
-//检查词汇表是否满单词
-void CheckCapacity(Vocabulary* ps)
-{
-	assert(ps);
-
-	if (ps->size == ps->capacity)
-	{
-		//增容
-		Words* ptr = (Words*)realloc(ps->data, (ps->capacity + 2)*sizeof(Words));
-		if (ptr != NULL)
-		{
-			ps->data = ptr;
-			ps->capacity += 2;//增容后
-		}
-		
-	}
-}
-
-void test()
-{
-	int input = 0;
-	//创建词汇表
-	Vocabulary voc;
-	//词汇表初始化
-	InitVocabulary(&voc);
-	do
-	{
-		printf("请选择:>");
-		scanf("%d", &input);//输入选项
-		switch (input)
-		{
-		case Add:
-			AddVocabulary(&voc);
-			break;
-		case Mod:
-			ModifyVocabulary(&voc);
-			break;
-		case View:
-			ViewVocabulary(&voc);
-			break;
-		case Del:
-			DeleteVocabulary(&voc);
-			break;
-		case Search:
-			SearchVocabulary(&voc);
-			break;
-		case Study:
-			StudyVocabulary(&voc);
-			break;
-		case Exit:
-			SaveVocabulary(&voc);//退出时保存词汇表
-			printf("退出\n");
-			Sleep(1000);//睡眠一秒
-			break;
-		default:
-			printf("选择错误,请重新输入\n");
-		}
-	} while (input);
-}
-
-int main()
-{
-	menu();//菜单
-	test();
-	return 0;
-}
-
-
+//初始化
