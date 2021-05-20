@@ -7,7 +7,6 @@
 //一次最多添加单词个数
 #define COUNT_MAX 5
 
-
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
